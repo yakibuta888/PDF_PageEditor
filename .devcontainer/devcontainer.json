@@ -1,5 +1,5 @@
 {
-  "name": "Python_Project",
+  "name": "PDF_PageEditor",
   "dockerComposeFile": ["../docker-compose.yml", "docker-compose.devcontainer.yml"],
   "service": "app",
   "workspaceFolder": "/home/pyclient/workspace",
@@ -41,7 +41,8 @@
           "reportMissingModuleSource": "information",
           "reportMissingTypeStubs": "information",
           "reportInvalidStringEscapeSequence": "information",
-          "reportTypedDictNotRequiredAccess":"warning"
+          "reportTypedDictNotRequiredAccess": "warning",
+          "reportUnknownMemberType": "none"
         },
         // todo-tree settings
         "todo-tree.general.tags": [
