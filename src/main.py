@@ -1,7 +1,7 @@
 import os
 import datetime
 
-from pypdf import PdfMerger
+from pypdf import PdfMerger, PdfReader, PdfWriter
 
 
 now: str = datetime.datetime.now(
@@ -27,6 +27,28 @@ merger.append(base_pdf)
 number_of_pages = len(merger.pages)
 
 print(number_of_pages)
+
+reader = PdfReader(base_pdf)
+bookmarks = reader.outline
+
+new_bookmarks: list[dict[str, str | int]] = list()
+for bookmark in bookmarks:
+    detail: dict[str, str | object] = {key: bookmark[key] for key in bookmark.keys()}  # type: ignore
+    if not isinstance(detail['/Title'], str):
+        continue
+    title: str = detail['/Title']
+    page_number: int = detail['/Page']['/StructParents'] + 2  # type: ignore
+    new_bookmark: dict[str, str | int] = {'title': title, 'page_number': page_number}
+    new_bookmarks.append(new_bookmark)
+
+merger._trim_outline(reader, bookmarks, list(range(number_of_pages)))
+
+for a_bookmark in new_bookmarks:
+    new_page_number: int = int(a_bookmark['page_number']) // 2
+    a_bookmark.update({'page_number': new_page_number})
+    merger.add_outline_item(title=a_bookmark['title'], page_number=a_bookmark['page_number'])
+    print(a_bookmark)
+
 
 for i in range(number_of_pages):
     if i == 0 or i == (number_of_pages - 1):
