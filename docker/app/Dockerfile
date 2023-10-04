@@ -1,12 +1,23 @@
 # syntax=docker/dockerfile:1.4.1
 FROM python:3.11-slim
 
+ENV DISPLAY=:1
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
 	apt-utils \
 	gcc \
 	build-essential \
 	sudo \
+	tk-dev \
+	tigervnc-standalone-server \
+	tigervnc-common \
+	novnc \
+	websockify \
+	x11-apps \
+	lxde \
+	tigervnc-tools \
 	# clean up
 	&& apt-get autoremove -y \
 	&& apt-get clean -y \
@@ -19,9 +30,12 @@ ENV PATH=${WORKDIR}/vendor/bin:$PATH \
 
 WORKDIR ${WORKDIR}
 
-# Libraries used only when developing
+COPY ./env/requirements.txt ${PWD}
 RUN pip install --upgrade pip;\
 	pip install --no-cache-dir \
+	-r requirements.txt \
+	# Libraries used only when developing should write under this line.
+	# (Don't write in requirements.txt)
 	autopep8 \
 	flake8 \
 	pytest

@@ -109,5 +109,5 @@
     "ghcr.io/devcontainers/features/common-utils:2": {}
   },
   "remoteUser": "pyclient",
-  "postCreateCommand": "pip install -r env/requirements.txt"
+  "postStartCommand": "bash \"$HOME/workspace/vnc-setting.sh\""
 }
