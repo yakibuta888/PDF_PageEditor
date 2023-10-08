@@ -13,15 +13,29 @@ RUN apt-get update \
 	tk-dev \
 	tigervnc-standalone-server \
 	tigervnc-common \
+	tigervnc-tools \
 	novnc \
 	websockify \
+	task-xfce-desktop \
+	dbus-x11 \
+	x11-utils \
+	x11-xserver-utils \
 	x11-apps \
-	lxde \
-	tigervnc-tools \
+	task-japanese \
+	locales \
+	fonts-takao \
+	task-japanese-desktop \
+	ibus-kkc \
 	# clean up
 	&& apt-get autoremove -y \
 	&& apt-get clean -y \
 	&& rm -rf /var/lib/apt/lists/*
+
+RUN sed -i -E 's/# (ja_JP.UTF-8)/\1/' /etc/locale.gen \
+	&& locale-gen
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP:ja
+ENV LC_ALL ja_JP.UTF-8
 
 ARG WORKDIR
 ENV PATH=${WORKDIR}/vendor/bin:$PATH \
