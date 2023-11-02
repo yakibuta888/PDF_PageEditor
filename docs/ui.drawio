@@ -1,0 +1,67 @@
+<mxfile host="65bd71144e">
+    <diagram id="GOMjZC-umIdH6OiZ7hCN" name="ページ1">
+        <mxGraphModel dx="445" dy="1080" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="214" width="400" height="526" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="260" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="350" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="編集元ファイル" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="230" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="✅ 出力先ファイル名を指定する" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="300" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="○ 偶数ページを抽出する　○ 奇数ページを抽出する" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="450" width="350" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="endArrow=none;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="410" y="410" as="sourcePoint"/>
+                        <mxPoint x="790" y="410" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="オプション" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="480" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="ページの抽出" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="420" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="✅ 開始ページを指定する" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="445" y="510" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="指定しない場合は元ファイルの場所に編集時間を加えたファイル名で作成する" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#B3B3B3;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="320" width="460" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="✅ 開始ページより前を残す" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="550" width="175" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="✅ 終了ページを指定する" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="445" y="580" width="185" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="✅ 終了ページより後を残す" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="620" width="175" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="□ページ目から開始" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="530" width="175" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="□ページ前で終了" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="600" width="175" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 12px;&quot;&gt;システムメッセージ&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="447.5" y="700" width="305" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="作成" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fontColor=#FFFFFF;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="555" y="660" width="90" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

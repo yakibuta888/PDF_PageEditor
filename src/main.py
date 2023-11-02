@@ -1,5 +1,9 @@
-from presentation.pdf_router import pdf_router
+from view.setting_view import SettingView
+
+
+def main():
+    SettingView()
 
 
 if __name__ == "__main__":
-    pdf_router()
+    main()

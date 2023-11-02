@@ -1,40 +1,31 @@
-import tkinter
+import tkinter as tk
+
+from view import frame
+from presentation.pdf_controller import PdfController
 
 
-def print_text():
-    text = tkinter.Label(frame_2, text=entry_1.get())
-    text.pack()
+class SettingView:
+    def __init__(self) -> None:
+        root = tk.Tk()
+        root.title('PDF page editor settings')
+        icon = tk.PhotoImage(file='src/view/pdf_generate_icon.png')
+        root.iconphoto(False, icon)
+        root.geometry('550x520')
+        root.resizable(False, False)
 
+        self.pdf_controller = PdfController()
 
-def count(number: int):
-    global value
+        file_frame = frame.FileFrame(root)
+        function_frame = frame.FunctionFrame(root)
+        option_frame = frame.OptionFrame(root)
+        info_frame = frame.InfoFrame(root)
+        frame.ButtonFrame(
+            root,
+            self.pdf_controller,
+            file_frame,
+            function_frame,
+            option_frame,
+            info_frame
+        )
 
-    text = tkinter.Label(frame_2, text=number, bg='#499499')
-    text.pack()
-
-    value = number + 1
-
-
-root = tkinter.Tk()
-root.title('settings')
-root.geometry('550x550')
-root.resizable(False, False)
-
-frame_1 = tkinter.Frame(root, bg='green', width=500, height=200)
-frame_2 = tkinter.Frame(root, bg='pink', width=500, height=300)
-frame_1.pack(padx=10, pady=10)
-frame_2.pack(padx=10, pady=10)
-frame_2.pack_propagate(False)
-
-entry_1 = tkinter.Entry(frame_1)
-entry_1.grid(row=0, column=0, padx=5, pady=5)
-frame_1.grid_propagate(False)
-
-button_1 = tkinter.Button(frame_1, text='out put', command=print_text)
-button_1.grid(row=0, column=1, padx=5, pady=5, ipadx=30)
-
-value = 0
-button_2 = tkinter.Button(frame_1, text='count', command=lambda: count(value))
-button_2.grid(row=1, column=0, columnspan=2, padx=5, pady=5, sticky='WE')
-
-root.mainloop()
+        root.mainloop()
