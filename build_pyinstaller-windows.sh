@@ -1,10 +1,11 @@
 #!/bin/bash
 set -euxo pipefail
 
-PASSWROD=$(openssl rsautl -decrypt -inkey password.key -in password.txt)
+PASSWORD=$(openssl rsautl -decrypt -inkey password.key -in password.txt)
 max_retry_count=5 # リトライ回数
 retry_interval=3 # リトライ間隔（秒）
 
+aplicationName=pdf_page_editor
 sourceDirectry=src/
 sourceFileName=main
 dockerContext=./docker/pyinstaller/
@@ -37,16 +38,16 @@ function retryable() {
 }
 
 
-docker image build -t $dockerImageTag -f "${dockerContext}Dockerfile" "$dockerContext"
+echo $PASSWORD | sudo -S docker image build -t $dockerImageTag -f "${dockerContext}Dockerfile" "$dockerContext"
 
-retryable docker run --rm --name $containerName -v "$(pwd):/src/" $dockerImageTag -c \
+retryable sudo docker run --rm --name $containerName -v "$(pwd):/src/" $dockerImageTag -c \
   "/usr/bin/python -m pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org --upgrade pip \
   && /usr/bin/pip install pywin32-ctypes \
   && /usr/bin/pip install --upgrade cffi \
   && /usr/bin/pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org -r env/requirements.txt \
   && pyinstaller $sourceDirectry$sourceFileName.py --onefile --clean --noconsole \
-  && mv dist/$sourceFileName.exe $sourceFileName.exe"
+  && mv dist/$sourceFileName.exe $aplicationName.exe"
 
-echo $PASSWROD | retryable sudo -S rm -rf __pycache__/ build/ dist/ $sourceFileName.spec
+retryable sudo rm -rf __pycache__/ build/ dist/ $sourceFileName.spec
 
-docker rmi $dockerImageTag
+sudo docker rmi $dockerImageTag
