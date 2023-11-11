@@ -26,7 +26,7 @@ PDFファイルを編集するデスクトップアプリ
 
 4. オプション<br>
 ![](image/use4.png)<br>
-  <br>
+   <br>
    4-1. 開始ページを指定すると、指定ページから抽出する<br>
    ![](image/use6.png)<br>
    ![](image/use5.png)<br>
@@ -42,7 +42,7 @@ PDFファイルを編集するデスクトップアプリ
    終了ページより後(図の青枠部分)を残したい場合はチェックを入れる
 
 5. 作成ボタンをクリックする<br>
-  ![](image/use9.png)
+![](image/use9.png)
 
 ## 開発
 ### 概要
@@ -69,15 +69,17 @@ VSCodeでDockerコンテナにリモート接続し、Dockerコンテナ内で�
 
 > [!NOTE]
 > 初回起動時のターミナルにnoVNC用のパスワードを設定するコマンドラインが表示されます。<br>
-> 6文字以上のパスワードを設定してください。<br>
-![](image/dev5.png)
+> 6文字以上のパスワードを設定してください。
 >
-> もしパスワードを設定するコマンドラインが表示されなかった場合は、Dockerコンテナ内のターミナルで`vnc-setting.sh`を実行してください。<br>
+> もしパスワードを設定するコマンドラインが表示されなかった場合は、Dockerコンテナ内のターミナルで`vnc-setting.sh`を実行してください。
+
+![](image/dev5.png)
 ![](image/dev4.png)
 
 ### Dockerコンテナ内でGUIを確認する
-`main.py`を実行し、webブラウザから http://127.0.0.1:6080/vnc.html にアクセスすることでtkinterのインタフェースを確認できます。<br>
-![](image/dev3.png)<br>
+`main.py`を実行し、webブラウザから http://127.0.0.1:6080/vnc.html にアクセスすることでtkinterのインタフェースを確認できます。
+
+![](image/dev3.png)
 
 ### exeファイルの作成
 Windowsで実行可能な.exeファイルを作成するために、Dockerコンテナを立ち上げてpyinstallerを使用します。<br>
@@ -85,12 +87,15 @@ Windowsで実行可能な.exeファイルを作成するために、Dockerコン
 
 > [!IMPORTANT]
 > windows環境の方はwslのターミナルで下記のコマンドを実行してください。<br>
-> (Linux環境での実行が必要)<br>
-> ![](image/dev6.png)<br>
+> (Linux環境での実行が必要)
+
+![](image/dev6.png)
+
 ```
 cd <プロジェクトのワーキングディレクトリ>
 source build_pyinstaller-windows.sh
 ```
+
 > [!WARNING]
 > このシェルスクリプトは`source`か`.`で実行してください。
 > `bash`等ではpermission errorが発生します。
