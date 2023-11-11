@@ -10,7 +10,7 @@ class SettingView:
         root.title('PDF page editor settings')
         icon = tk.PhotoImage(file='src/view/pdf_generate_icon.png')
         root.iconphoto(False, icon)
-        root.geometry('550x520')
+        root.geometry('560x580')
         root.resizable(False, False)
 
         self.pdf_controller = PdfController()

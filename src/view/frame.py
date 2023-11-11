@@ -53,7 +53,7 @@ class FileFrame(Frame):
 
         self.checkbutton_output_file = tk.Checkbutton(
             self.file_frame,
-            text='出力先ファイル名を指定する',
+            text='保存先とファイル名を指定する',
             font=NORMAL_FONT,
             variable=self.boolean_output_file,
             command=lambda: self.change_state(
